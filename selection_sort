@@ -1,0 +1,38 @@
+package bimestre4;
+import java.util.Arrays;
+import java.util.Random;
+
+public class selection_sort {
+
+	public static void main(String[] args) {
+		int []v = gerarVetor(20);
+		selectionSort(v);
+		System.out.println(Arrays.toString(v));
+		
+	}
+
+	private static int[] gerarVetor(int n) {
+		int []v = new int[n];
+		Random gerador = new Random();
+		for (int i=0; i<n; i++)
+			v[i] = gerador.nextInt(100);
+		return v;
+	}
+
+	private static void selectionSort(int[] v) {
+		for (int a =0; a< v.length ; a++)
+		{
+			int menor = a;
+			for (int b = a + 1; b < v.length; b++)
+				if (v[b] < v[menor]) menor = b;
+			trocar(v,a,menor);
+		}
+	}
+
+	private static void trocar(int[] v, int a, int menor) {
+		int aux=v[a];
+		v[a]=v[menor];
+		v[menor] = aux;
+	}
+
+}
