@@ -1,0 +1,29 @@
+package bimestre4;
+import java.util.Arrays;
+
+public class bubble_sort {
+
+	public static void main(String[] args) {
+		int v[] = {1,6,4,2,8};
+		int aux;
+		boolean controle;
+		
+		for (int a = 0; a < v.length; a++) {
+			controle = true;
+			for (int b = 0; b < ( v.length - 1 ); b++)
+			{
+				if (v[b] > v[b+1])
+				{
+					aux = v[b];
+					v[b] = v[b+1];
+					v[b+1] = aux;
+					controle= false;
+				}
+			}
+			if(controle) break;
+		}
+		for (int a = 0; a < v.length; a++) 
+			System.out.print(v[a] + " ");
+	}
+
+}
